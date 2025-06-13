@@ -5,6 +5,6 @@ body{
     margin: 0;
 }
 @font-face {
-    font-family: shantell;
-    src: url('./assets/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf') format('truetype');
-}
+    font-family: 'jannat';
+    src: url('./assets/fonts/A-JANNAT-LT-BOLD.TTF') format('truetype');
+  }

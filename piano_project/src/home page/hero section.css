@@ -8,7 +8,7 @@
 }
 .hs-piano-container{
     display: flex;
-    width: 960px;
+    width: fit-content;
     height: fit-content ;
     position: relative;
 }
@@ -33,7 +33,6 @@
     gap: 150px;
     top: -40px;
     width: 100%;
-    margin-left: 14px;
 }
 .hs-three-black-keys-container{
     display: flex;
@@ -51,9 +50,12 @@
 
 .hs-letters-container{
     display: flex;
-    gap: 77px;
+    gap: 85px;
 }
 .hs-letter{
     font-size: 30px;
-    font-family: 'shantell', sans-serif;
+    font-family: 'jannat';
+    background: linear-gradient(0deg, #41688D60, #eeeeee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
