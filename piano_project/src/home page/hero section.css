@@ -19,12 +19,20 @@
     margin: 0 35px;
     gap: 20px;
 }
-.piano-button{
+.piano-button {
     width: 85px;
     height: 561px;
     border-radius: 8px;
-    border:none;
-}
+    border: none;
+    background: #ffffff;
+    transition: transform 0.5s ease, background 0.5s ease;
+    backface-visibility: hidden;        /* Prevent flickering */
+    will-change: transform, background; /* Optimize for GPU */
+  }
+  .piano-button:hover {
+    background: linear-gradient(0deg, #8FA9C2, #E9E9E9);
+    transform: rotateY(30deg);
+  }
 
 .hs-black-keys-container{
     position:absolute;
