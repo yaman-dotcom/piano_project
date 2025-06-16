@@ -24,7 +24,7 @@
     height: 561px;
     border-radius: 8px;
     border: none;
-    background: #ffffff;
+    background: inear-gradient(0deg, #ffffff, #ffffff);
     transition: transform 0.5s ease, background 0.5s ease;
     backface-visibility: hidden;        /* Prevent flickering */
     will-change: transform, background; /* Optimize for GPU */

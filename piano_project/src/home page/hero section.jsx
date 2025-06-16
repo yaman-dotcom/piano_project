@@ -1,5 +1,20 @@
 import './hero section.css'
 function HeroSection (){
+    let key1=`Sequence 02.mp3`
+    let key2=`Sequence 03.mp3`
+    let key3=`Sequence 04.mp3`
+    let key4=`Sequence 05.mp3`
+    let key5=`Sequence 06.mp3`
+    let key6=`Sequence 07.mp3`
+    let key7=`Sequence 08.mp3`
+    let key8=`Sequence 09.mp3`
+    let key9=`Sequence 010.mp3`
+    let key10=`Sequence 011.mp3`
+    let playkey=(key)=>{
+       const audio=new audio(`/piano_project/src/assets/notes sounds /${key}`)
+       audio.currentTime=0
+       audio.play();
+    }
     return(
         <>
             <div className="hero-section">
@@ -8,6 +23,7 @@ function HeroSection (){
 
                         <button className='piano-button' 
                         style={{ transform: 'rotate(-2deg)' }}
+                        onClick={playkey(key1)}
                         >
 
                         </button>
