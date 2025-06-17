@@ -1,6 +1,6 @@
 import './hero section.css'
 function HeroSection (){
-    let key1=`Sequence 02.mp3`
+    let key1=`Sequence-02.mp3`
     let key2=`Sequence 03.mp3`
     let key3=`Sequence 04.mp3`
     let key4=`Sequence 05.mp3`
@@ -10,23 +10,30 @@ function HeroSection (){
     let key8=`Sequence 09.mp3`
     let key9=`Sequence 010.mp3`
     let key10=`Sequence 011.mp3`
-    let playkey=(key)=>{
-       const audio=new audio(`/piano_project/src/assets/notes sounds /${key}`)
-       audio.currentTime=0
-       audio.play();
-    }
+
+    let playkey = (key) => {
+    const audio = new Audio(`piano_project/public/notes-sounds/${key}`); 
+        console.log(audio)
+    audio.onerror = () => console.error("Failed to load:\n", key);
+    audio.play().catch(err => console.error("Playback error:", err));
+
+    audio.currentTime = 0;
+    audio.play();
+    };
     return(
         <>
             <div className="hero-section">
                 <div className='hs-piano-container'>
                     <div className='hs-white-buttons-container'>
 
-                        <button className='piano-button' 
-                        style={{ transform: 'rotate(-2deg)' }}
-                        onClick={playkey(key1)}
-                        >
+                    <button 
+                    className='piano-button'
+                    style={{ transform: 'rotate(-2deg)' }}
+                    onClick={() => playkey(key1)} // wrap it in an arrow function!
+                    >
+                    </button>
 
-                        </button>
+                        
                         <button className='piano-button'
                         style={{height:'498px'}}>
 
