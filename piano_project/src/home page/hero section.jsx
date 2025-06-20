@@ -15,9 +15,7 @@
     Object.values(audioCache).forEach((e)=>e.load())
 
     const playkey = (key) => {
-        const audio = audioCache[key];
-        // console.log(audio)
-       
+        const audio = audioCache[key];  
         audio.currentTime = 0;
         audio.play();
         
