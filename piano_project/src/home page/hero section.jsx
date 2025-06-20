@@ -13,7 +13,7 @@ function HeroSection (){
 
     let playkey = (key) => {
         const audio = new Audio("/notes-sounds/"+key);        
-        console.log(audio)
+        console.log(audio);
     
 
     audio.currentTime = 0;
