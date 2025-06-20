@@ -1,60 +1,61 @@
-import './hero section.css'
-function HeroSection (){
-    let key1=`Sequence_02.mp3`
-    let key2=`Sequence 03.mp3`
-    let key3=`Sequence 04.mp3`
-    let key4=`Sequence 05.mp3`
-    let key5=`Sequence 06.mp3`
-    let key6=`Sequence 07.mp3`
-    let key7=`Sequence 08.mp3`
-    let key8=`Sequence 09.mp3`
-    let key9=`Sequence 10.mp3`
-    let key10=`Sequence 011.mp3`
+    import './hero section.css'
+    function HeroSection (){
+        const audioCache = {
+    'Sequence_02.mp3': new Audio('/notes-sounds/Sequence_02.mp3'),
+    'Sequence 03.mp3': new Audio('/notes-sounds/Sequence 03.mp3'),
+    'Sequence 04.mp3': new Audio('/notes-sounds/Sequence 04.mp3'),
+    'Sequence 05.mp3': new Audio('/notes-sounds/Sequence 05.mp3'),
+    'Sequence 06.mp3': new Audio('/notes-sounds/Sequence 06.mp3'),
+    'Sequence 07.mp3': new Audio('/notes-sounds/Sequence 07.mp3'),
+    'Sequence 08.mp3': new Audio('/notes-sounds/Sequence 08.mp3'),
+    'Sequence 09.mp3': new Audio('/notes-sounds/Sequence 09.mp3'),
+    'Sequence 10.mp3': new Audio('/notes-sounds/Sequence 10.mp3'),
+    'Sequence 011.mp3': new Audio('/notes-sounds/Sequence 11.mp3'),
+    };
+    Object.values(audioCache).forEach((e)=>e.load())
 
-    let playkey = (key) => {
-        const audio = new Audio("/notes-sounds/"+key);        
-        console.log(audio)
-    
-
-    audio.currentTime = 0;
-    audio.play();
+    const playkey = (key) => {
+        const audio = audioCache[key];  
+        audio.currentTime = 0;
+        audio.play();
+        
     };
     document.addEventListener('keydown', function (e) {
     switch (e.key) {
         case 'a':
-        playkey(key1);
+        playkey('Sequence_02.mp3');
         document.getElementById('button-A').click();
         break;
         case 's':
-        playkey(key2);
+        playkey('Sequence 03.mp3');
         document.getElementById('button-S').click();
         break;
         case 'd':
-        playkey(key3);
+        playkey('Sequence 04.mp3');
         document.getElementById('button-D').click();
         break;
         case 'f':
-        playkey(key4);
+        playkey('Sequence 05.mp3');
         document.getElementById('button-F').click();
         break;
         case 'g':
-        playkey(key5);
+        playkey('Sequence 06.mp3');
         document.getElementById('button-G').click();
         break;
         case 'h':
-        playkey(key6);
+        playkey('Sequence 07.mp3');
         document.getElementById('button-H').click();
         break;
         case 'j':
-        playkey(key7);
+        playkey('Sequence 08.mp3');
         document.getElementById('button-J').click();
         break;
         case 'k':
-        playkey(key7); // Same as 'j'—intentional?
+        playkey('Sequence 09.mp3'); // Same as 'j'—intentional?
         document.getElementById('button-K').click();
         break;
         case 'l':
-        playkey(key8);
+        playkey('Sequence 10.mp3');
         document.getElementById('button-L').click();
         break;
     }
@@ -69,7 +70,7 @@ function HeroSection (){
                         <button 
                         className='piano-button'
                         style={{ transform: 'rotate(-2deg)' }}
-                        onClick={() => playkey(key1)} // wrap it in an arrow function!
+                        onClick={() => playkey('Sequence_02.mp3')} 
                         id='button-A'
                         >
                         </button>
@@ -77,56 +78,56 @@ function HeroSection (){
                         
                         <button className='piano-button'
                         style={{height:'498px'}}
-                        onClick={() => playkey(key2)} 
+                        onClick={() => playkey('Sequence 03.mp3')} 
                         id='button-S'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'520px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key3)} 
+                        onClick={() => playkey('Sequence 04.mp3')} 
                         id='button-D'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key4)} 
+                        onClick={() => playkey('Sequence 05.mp3')} 
                         id='button-F'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'517px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key5)} 
+                        onClick={() => playkey('Sequence 06.mp3')} 
                         id='button-G'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key6)} 
+                        onClick={() => playkey('Sequence 07.mp3')} 
                         id='button-H'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'530px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key7)} 
+                        onClick={() => playkey('Sequence 08.mp3')} 
                         id='button-J'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'511px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key8)} 
+                        onClick={() => playkey('Sequence 09.mp3')} 
                         id='button-K'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'531px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key9)} 
+                        onClick={() => playkey('Sequence 10.mp3')} 
                         id='button-L'
                         >
 
