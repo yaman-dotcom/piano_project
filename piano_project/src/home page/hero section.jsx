@@ -9,7 +9,7 @@ function HeroSection (){
     let key7=`Sequence 08.mp3`
     let key8=`Sequence 09.mp3`
     let key9=`Sequence 10.mp3`
-    // let key10=`Sequence 011.mp3`
+    let key10=`Sequence 011.mp3`
 
     let playkey = (key) => {
         const audio = new Audio("/notes-sounds/"+key);        
