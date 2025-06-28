@@ -1,18 +1,18 @@
 import './hero section.css'
 function HeroSection (){
-    let key1=`Sequence_02.mp3`
-    let key2=`Sequence 03.mp3`
-    let key3=`Sequence 04.mp3`
-    let key4=`Sequence 05.mp3`
-    let key5=`Sequence 06.mp3`
-    let key6=`Sequence 07.mp3`
-    let key7=`Sequence 08.mp3`
-    let key8=`Sequence 09.mp3`
-    let key9=`Sequence 10.mp3`
+    let key1=`a.wav`
+    let key2=`s.wav`
+    let key3=`d.wav`
+    let key4=`f.wav`
+    let key5=`g.wav`
+    let key6=`h.wav`
+    let key7=`j.wav`
+    let key8=`k.wav`
+    let key9=`l.wav`
     let key10=`Sequence 011.mp3`
 
     let playkey = (key) => {
-        const audio = new Audio("/notes-sounds/"+key);        
+        const audio = new Audio("/tunes/"+key)       
         console.log(audio);
     
 
