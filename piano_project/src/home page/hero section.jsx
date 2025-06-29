@@ -19,43 +19,80 @@ function HeroSection (){
     audio.currentTime = 0;
     audio.play();
     };
+    let button;
     document.addEventListener('keydown', function (e) {
     switch (e.key) {
         case 'a':
         playkey(key1);
-        document.getElementById('button-A').click();
+        button=document.getElementById('button-A');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140,140)
         break;
         case 's':
         playkey(key2);
-        document.getElementById('button-S').click();
+        button=document.getElementById('button-S');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'd':
         playkey(key3);
-        document.getElementById('button-D').click();
+        button=document.getElementById('button-D');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'f':
         playkey(key4);
-        document.getElementById('button-F').click();
+        button=document.getElementById('button-F');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'g':
         playkey(key5);
-        document.getElementById('button-G').click();
+        button=document.getElementById('button-G');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'h':
         playkey(key6);
-        document.getElementById('button-H').click();
+        button=document.getElementById('button-H');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'j':
         playkey(key7);
-        document.getElementById('button-J').click();
+        button=document.getElementById('button-J');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'k':
         playkey(key7); // Same as 'j'—intentional?
-        document.getElementById('button-K').click();
+        button=document.getElementById('button-K');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
         case 'l':
         playkey(key8);
-        document.getElementById('button-L').click();
+        button=document.getElementById('button-L');
+        button.classList.add('active')
+        setTimeout(()=>{
+            button.classList.remove('active')
+        },140)
         break;
     }
     });
@@ -83,6 +120,7 @@ function HeroSection (){
 
                         </button>
                         <button className='piano-button'
+                        
                         style={{height:'520px',transform: 'rotate(-1deg)'}}
                         onClick={() => playkey(key3)} 
                         id='button-D'

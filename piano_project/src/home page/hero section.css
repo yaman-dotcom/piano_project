@@ -29,7 +29,7 @@
     backface-visibility: hidden;        
     will-change: transform, background; 
   }
-  .piano-button:active {
+  .active {
     background: linear-gradient(0deg, #8FA9C2, #E9E9E9);
     transform: rotateY(30deg);
   }
