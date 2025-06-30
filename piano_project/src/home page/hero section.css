@@ -69,8 +69,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* tones image */
 .hs-tone-container{
     position: absolute;
+    /* background-color: black; */
     top: 0;
     width: 100%;
     z-index: 0;
@@ -81,4 +84,26 @@
 #tone-A{
     margin-left: 20px;
 }
+.tone-image{
+    opacity: 0;
+}
 /* }so you can fit all the tones perfectly */
+
+
+/* ....animation.... */
+@keyframes moveUp{
+    0%{
+        transform:translateY(0);
+        opacity: 100%;
+    }
+    60%{
+        opacity: 100%;
+    }
+    100%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+.move-up{
+    animation:moveUp 1s ease;
+}
