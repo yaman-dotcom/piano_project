@@ -241,26 +241,26 @@ function HeroSection (){
                     <div className='hs-black-keys-container'>
                     <div className='hs-three-black-keys-container'>
                             <button className='black-key'>
-
+                                <p className='blk-letter'>W</p>             
                             </button>
                             <button className='black-key'>
-
-                            </button>
-                        </div>
-                        <div className='hs-three-black-keys-container'>
-                            <button className='black-key'>
-
-                            </button>
-                            <button className='black-key'>
-
-                            </button>
-                            <button className='black-key'>
-
+                                <p className='blk-letter'>E</p>
                             </button>
                         </div>
                         <div className='hs-three-black-keys-container'>
                             <button className='black-key'>
-
+                                <p className='blk-letter'>R</p>
+                            </button>
+                            <button className='black-key'>
+                                <p className='blk-letter'>T</p>
+                            </button>
+                            <button className='black-key'>
+                                <p className='blk-letter'>E</p>
+                            </button>
+                        </div>
+                        <div className='hs-three-black-keys-container'>
+                            <button className='black-key'>
+                                <p className='blk-letter'>U</p>
                             </button>
                            
                         </div>

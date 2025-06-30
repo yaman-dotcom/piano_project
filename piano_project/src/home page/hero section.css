@@ -44,6 +44,16 @@
     width: 100%;
     z-index: 3;
 }
+.blk-letter{
+    /* background: linear-gradient(0deg,white,rgba(255, 255, 255, 0.412));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: rgba(255, 255, 255, 0.492);
+    height: fit-content ;
+    line-height: 1;
+    font-size:20px ;
+    font-family: 'jannat';
+}
 .hs-three-black-keys-container{
     display: flex;
     gap: 32px;
@@ -51,6 +61,8 @@
   
 }
 .black-key{
+    display: flex;
+    justify-content: center;
     background-color: black;
     height: 324px;
     width: 65px;
