@@ -13,119 +13,25 @@ function HeroSection (){
     let key9=`l.wav`
 
     let playkey = (key) => {
-        const audio = new Audio("/tunes/"+key) //getting the tones file from the public       
-        // console.log(audio); //consoleing the audio in html to check every thing 
+        const audio = new Audio("/tunes/"+key) //getting the tones file from the public        
         audio.currentTime = 0;
         audio.play();
     };//plays the sounds
 
     let animating = (id) => {
     const svg = document.getElementById(id);
-    svg.classList.remove('move-up');
-    void svg.offsetWidth;
-    svg.classList.add('move-up');
+    svg.classList.remove('move-up');//remove class that is animated in hero section.css
+    void svg.offsetWidth;//reset the svg 
+    svg.classList.add('move-up');//add class 
 
     svg.addEventListener('animationend', function handler() {
         svg.classList.remove('move-up');
         svg.removeEventListener('animationend', handler);
     });
-    };//gives the svg the class to move up and down 
+    };//moves the svg up
     
 
-    document.addEventListener('keydown', function (e) {
-        let elowerCase=e.key.toLowerCase()
-   
-        switch (elowerCase) {
-            case 'a':
-            playkey(key1);
-            button=document.getElementById('button-A');
-            button.classList.add('active')
-            animating('tone-A')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 's':
-            playkey(key2);
-            button=document.getElementById('button-S');
-            button.classList.add('active')
-            animating('tone-S')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 'd':
-            playkey(key3);
-            button=document.getElementById('button-D');
-            button.classList.add('active')
-            animating('tone-D')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 'f':
-            playkey(key4);
-            button=document.getElementById('button-F');
-            button.classList.add('active')
-            animating('tone-F')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 'g':
-            playkey(key5);
-            button=document.getElementById('button-G');
-            button.classList.add('active')
-            animating('tone-G')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-            case 'h':
-            playkey(key6);
-            button=document.getElementById('button-H');
-            button.classList.add('active')
-            animating('tone-H')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 'j':
-            playkey(key7);
-            button=document.getElementById('button-J');
-            button.classList.add('active')
-            animating('tone-J')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-
-            break;
-            case 'k':
-            playkey(key7); // Same as 'j'—intentional?
-            button=document.getElementById('button-K');
-            button.classList.add('active')
-            animating('tone-K')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-
-            case 'l':
-            playkey(key8);
-            button=document.getElementById('button-L');
-            button.classList.add('active')
-            animating('tone-L')
-            setTimeout(()=>{
-                button.classList.remove('active')
-            },140)
-            break;
-        }
-    });//check the if any of the buttons is clicked and plays the tone 
+ //check the if any of the buttons is clicked and plays the tone 
 
     
     return(
