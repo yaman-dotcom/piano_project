@@ -1,37 +1,50 @@
 import './hero section.css'
 function HeroSection (){
-    let button;
-    // variables for the tones files
-    let key1=`a.wav`
-    let key2=`s.wav`
-    let key3=`d.wav`
-    let key4=`f.wav`
-    let key5=`g.wav`
-    let key6=`h.wav`
-    let key7=`j.wav`
-    let key8=`k.wav`
-    let key9=`l.wav`
 
-    let playkey = (key) => {
-        const audio = new Audio("/tunes/"+key) //getting the tones file from the public        
+
+    const keyMap = {
+        a: { file: "a.wav", buttonId: "button-A", toneId: "tone-A" },
+        s: { file: "s.wav", buttonId: "button-S", toneId: "tone-S" },
+        d: { file: "d.wav", buttonId: "button-D", toneId: "tone-D" },
+        f: { file: "f.wav", buttonId: "button-F", toneId: "tone-F" },
+        g: { file: "g.wav", buttonId: "button-G", toneId: "tone-G" },
+        h: { file: "h.wav", buttonId: "button-H", toneId: "tone-H" },
+        j: { file: "j.wav", buttonId: "button-J", toneId: "tone-J" },
+        k: { file: "j.wav", buttonId: "button-K", toneId: "tone-K" }, // same sound as 'j'
+        l: { file: "k.wav", buttonId: "button-L", toneId: "tone-L" },
+    };
+    
+    const playkey = (file) => {
+        const audio = new Audio("/tunes/" + file);
         audio.currentTime = 0;
         audio.play();
-    };//plays the sounds
-
-    let animating = (id) => {
-    const svg = document.getElementById(id);
-    svg.classList.remove('move-up');//remove class that is animated in hero section.css
-    void svg.offsetWidth;//reset the svg 
-    svg.classList.add('move-up');//add class 
-
-    svg.addEventListener('animationend', function handler() {
-        svg.classList.remove('move-up');
-        svg.removeEventListener('animationend', handler);
-    });
-    };//moves the svg up
+    };
     
-
- //check the if any of the buttons is clicked and plays the tone 
+    const animating = (id) => {
+        const svg = document.getElementById(id);
+        svg.classList.remove("move-up");
+        void svg.offsetWidth;
+        svg.classList.add("move-up");
+    
+        svg.addEventListener("animationend", function handler() {
+            svg.classList.remove("move-up");
+            svg.removeEventListener("animationend", handler);
+        });
+    };
+    
+    document.addEventListener("keydown", function (e) {
+        const key = e.key.toLowerCase();
+        const map = keyMap[key];
+        if (!map) return;
+    
+        playkey(map.file);
+        const button = document.getElementById(map.buttonId);
+        button.classList.add("active");
+        animating(map.toneId);
+        setTimeout(() => {
+            button.classList.remove("active");
+        }, 140);
+    });
 
     
     return(
