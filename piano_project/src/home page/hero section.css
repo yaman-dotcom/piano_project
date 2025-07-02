@@ -28,7 +28,8 @@
     background: inear-gradient(0deg, #ffffff, #ffffff);
     transition: transform 0.5s ease, background 0.5s ease;
     backface-visibility: hidden;        
-    will-change: transform, background; 
+    will-change: transform, background;
+    box-shadow: 16px 24px 8px rgba(0 ,0 ,0 ,0.25) ;
   }
   .active {
     background: linear-gradient(0deg, #8FA9C2, #E9E9E9);
@@ -68,6 +69,7 @@
     width: 65px;
     border-radius: 12px;
     border: none;
+    box-shadow: 9px 13px 7px rgba(0 ,0 ,0 ,0.15);
 }
 
 .hs-letters-container{
