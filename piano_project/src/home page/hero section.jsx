@@ -22,10 +22,11 @@ function HeroSection (){
 
     } //keys oject that contain file name ,button id (for the sound) and toneId (for the animation)
     
-    const playkey = (file) => {
+    const playkey = (file ,id) => {
         const audio = new Audio("/tunes/" + file)//gettting the file form the buplic
         audio.currentTime = 0;
         audio.play()
+        animating(id)
     }
     
     const animating = (id) => {
@@ -45,7 +46,7 @@ function HeroSection (){
         const map = keyMap[key]
         if (!map) return
     
-        playkey(map.file);
+        playkey(map.file, map.toneId);
         const button = document.getElementById(map.buttonId)
         button.classList.add("active")
         animating(map.toneId)
@@ -104,7 +105,7 @@ function HeroSection (){
                         <button 
                         className='piano-button'
                         style={{ transform: 'rotate(-2deg)' }}
-                        onClick={() => playkey(keyMap.a.file)} // wrap it in an arrow function!
+                        onClick={() => playkey( keyMap.a.file ,keyMap.a.toneId)} // wrap it in an arrow function!
                         id='button-A'
                         >
                         </button>
@@ -112,7 +113,7 @@ function HeroSection (){
                         
                         <button className='piano-button'
                         style={{height:'498px'}}
-                        onClick={() => playkey(key2)} 
+                        onClick={() => playkey(keyMap.s.file,keyMap.s.toneId)} 
                         id='button-S'
                         >
 
@@ -120,49 +121,49 @@ function HeroSection (){
                         <button className='piano-button'
                         
                         style={{height:'520px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key3)} 
+                        onClick={() => playkey(keyMap.d.file,keyMap.d.toneId)} 
                         id='button-D'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key4)} 
+                        onClick={() => playkey(keyMap.f.file,keyMap.f.toneId)} 
                         id='button-F'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'517px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key5)} 
+                        onClick={() => playkey(keyMap.g.file,keyMap.g.toneId)} 
                         id='button-G'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key6)} 
+                        onClick={() => playkey(keyMap.h.file,keyMap.h.toneId)} 
                         id='button-H'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'530px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key7)} 
+                        onClick={() => playkey(keyMap.j.file,keyMap.j.toneId)} 
                         id='button-J'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'511px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key8)} 
+                        onClick={() => playkey(keyMap.k.file,keyMap.k.toneId)} 
                         id='button-K'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'531px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key9)} 
+                        onClick={() => playkey(keyMap.l.file,keyMap.l.toneId)} 
                         id='button-L'
                         >
 
