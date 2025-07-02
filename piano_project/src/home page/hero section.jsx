@@ -3,48 +3,58 @@ function HeroSection (){
 
 
     const keyMap = {
-        a: { file: "a.wav", buttonId: "button-A", toneId: "tone-A" },
+        a: { file: "a.wav", buttonId: "button-A", toneId: "tone-A" },//white keys
         s: { file: "s.wav", buttonId: "button-S", toneId: "tone-S" },
         d: { file: "d.wav", buttonId: "button-D", toneId: "tone-D" },
         f: { file: "f.wav", buttonId: "button-F", toneId: "tone-F" },
         g: { file: "g.wav", buttonId: "button-G", toneId: "tone-G" },
         h: { file: "h.wav", buttonId: "button-H", toneId: "tone-H" },
         j: { file: "j.wav", buttonId: "button-J", toneId: "tone-J" },
-        k: { file: "j.wav", buttonId: "button-K", toneId: "tone-K" }, // same sound as 'j'
+        k: { file: "j.wav", buttonId: "button-K", toneId: "tone-K" },
         l: { file: "k.wav", buttonId: "button-L", toneId: "tone-L" },
-    };
+
+        w: { file: "a.wav", buttonId: 'button-W' },//black keys
+        e: { file: "d.wav", buttonId: 'button-E' },
+        r: { file: "f.wav", buttonId: 'button-R' },
+        t: { file: "g.wav", buttonId: 'button-T' },
+        y: { file: "l.wav", buttonId: 'button-Y' },
+        u: { file: "k.wav", buttonId: 'button-U' },
+
+    } //keys oject that contain file name ,button id (for the sound) and toneId (for the animation)
     
-    const playkey = (file) => {
-        const audio = new Audio("/tunes/" + file);
+    const playkey = (file ,id) => {
+        const audio = new Audio("/tunes/" + file)//gettting the file form the buplic
         audio.currentTime = 0;
-        audio.play();
-    };
+        audio.play()
+        animating(id)
+    }
     
     const animating = (id) => {
         const svg = document.getElementById(id);
-        svg.classList.remove("move-up");
+        svg.classList.remove("move-up")
         void svg.offsetWidth;
-        svg.classList.add("move-up");
+        svg.classList.add("move-up")
     
         svg.addEventListener("animationend", function handler() {
-            svg.classList.remove("move-up");
-            svg.removeEventListener("animationend", handler);
-        });
-    };
+            svg.classList.remove("move-up")
+            svg.removeEventListener("animationend", handler)
+        })
+    }
     
     document.addEventListener("keydown", function (e) {
-        const key = e.key.toLowerCase();
-        const map = keyMap[key];
-        if (!map) return;
+        const key = e.key.toLowerCase()//to allow both upper case and lower case 
+        const map = keyMap[key]
+        if (!map) return
     
-        playkey(map.file);
-        const button = document.getElementById(map.buttonId);
-        button.classList.add("active");
-        animating(map.toneId);
+        playkey(map.file, map.toneId);
+        const button = document.getElementById(map.buttonId)
+        button.classList.add("active")
+        animating(map.toneId)
         setTimeout(() => {
-            button.classList.remove("active");
-        }, 140);
-    });
+            button.classList.remove("active")
+        }, 140)
+    })// turn on the sound when the button is clciked 
+
 
     
     return(
@@ -95,7 +105,7 @@ function HeroSection (){
                         <button 
                         className='piano-button'
                         style={{ transform: 'rotate(-2deg)' }}
-                        onClick={() => playkey(key1)} // wrap it in an arrow function!
+                        onClick={() => playkey( keyMap.a.file ,keyMap.a.toneId)} // wrap it in an arrow function!
                         id='button-A'
                         >
                         </button>
@@ -103,7 +113,7 @@ function HeroSection (){
                         
                         <button className='piano-button'
                         style={{height:'498px'}}
-                        onClick={() => playkey(key2)} 
+                        onClick={() => playkey(keyMap.s.file,keyMap.s.toneId)} 
                         id='button-S'
                         >
 
@@ -111,49 +121,49 @@ function HeroSection (){
                         <button className='piano-button'
                         
                         style={{height:'520px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key3)} 
+                        onClick={() => playkey(keyMap.d.file,keyMap.d.toneId)} 
                         id='button-D'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key4)} 
+                        onClick={() => playkey(keyMap.f.file,keyMap.f.toneId)} 
                         id='button-F'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'517px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key5)} 
+                        onClick={() => playkey(keyMap.g.file,keyMap.g.toneId)} 
                         id='button-G'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'504px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key6)} 
+                        onClick={() => playkey(keyMap.h.file,keyMap.h.toneId)} 
                         id='button-H'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'530px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key7)} 
+                        onClick={() => playkey(keyMap.j.file,keyMap.j.toneId)} 
                         id='button-J'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'511px',transform: 'rotate(-1deg)'}}
-                        onClick={() => playkey(key8)} 
+                        onClick={() => playkey(keyMap.k.file,keyMap.k.toneId)} 
                         id='button-K'
                         >
 
                         </button>
                         <button className='piano-button'
                         style={{height:'531px',transform: 'rotate(1deg)'}}
-                        onClick={() => playkey(key9)} 
+                        onClick={() => playkey(keyMap.l.file,keyMap.l.toneId)} 
                         id='button-L'
                         >
 
@@ -161,26 +171,38 @@ function HeroSection (){
                     </div>
                     <div className='hs-black-keys-container'>
                     <div className='hs-three-black-keys-container'>
-                            <button className='black-key'>
+                            <button className='black-key'
+                            id='button-W'
+                            >
                                 <p className='blk-letter'>W</p>             
                             </button>
-                            <button className='black-key'>
+                            <button className='black-key'
+                            id='button-E'
+                            >
                                 <p className='blk-letter'>E</p>
                             </button>
                         </div>
                         <div className='hs-three-black-keys-container'>
-                            <button className='black-key'>
+                            <button className='black-key'
+                            id='button-R'
+                            >
                                 <p className='blk-letter'>R</p>
                             </button>
-                            <button className='black-key'>
+                            <button className='black-key'
+                            id='button-T'
+                            >
                                 <p className='blk-letter'>T</p>
                             </button>
-                            <button className='black-key'>
-                                <p className='blk-letter'>E</p>
+                            <button className='black-key'
+                            id='button-Y'
+                            >
+                                <p className='blk-letter'>Y</p>
                             </button>
                         </div>
                         <div className='hs-three-black-keys-container'>
-                            <button className='black-key'>
+                            <button className='black-key'
+                            id='button-U'
+                            >
                                 <p className='blk-letter'>U</p>
                             </button>
                            
