@@ -1,4 +1,6 @@
 import './hero section.css'
+
+import InputSection from './text input'
 function HeroSection (){
 
 
@@ -169,6 +171,7 @@ function HeroSection (){
 
                         </button>
                     </div>
+
                     <div className='hs-black-keys-container'>
                     <div className='hs-three-black-keys-container'>
                             <button className='black-key'
@@ -221,6 +224,7 @@ function HeroSection (){
                     <p className='hs-letter'>L</p>
                 </div>
             </div>
+            <InputSection/>
         </>
     )
 }

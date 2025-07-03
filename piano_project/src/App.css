@@ -7,4 +7,18 @@ body{
 @font-face {
     font-family: 'jannat';
     src: url('./assets/fonts/A-JANNAT-LT-BOLD.TTF') format('truetype');
-  }
+}
+h1{
+    font-size: 30px;
+    color: white;
+    line-height: 100%;
+    font-family: 'jannat';
+    margin: 0;
+}
+h4{
+    font-size: 15px;
+    color: white;
+    line-height: 100%;
+    font-family: 'jannat';
+    margin: 0;
+}
