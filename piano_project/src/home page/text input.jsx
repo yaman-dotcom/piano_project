@@ -1,18 +1,6 @@
 import { useEffect, useState } from 'react'
 import './text input.css'
 function InputSection ({ isTextFocused: setIsTextFocused }) {
-    // let [textInputIsFocused,setTextInputIsFocused]=useState(false)
-    //to make sure if the input text is focused and if so do not play the piano while typing
-    // isTextFocused=textInputIsFocused;
-   
-    // useEffect(() => {
-    //     const handleKeyDown = () => {
-    //         if (textInputIsFocused) return; // skip if typing
-    //     }
-
-    //     window.addEventListener('keydown', handleKeyDown);
-    //     return () => window.removeEventListener('keydown', handleKeyDown);
-    // }, [textInputIsFocused];
 
     return(
         <>
