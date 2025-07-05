@@ -50,31 +50,29 @@ function HeroSection (){
     
     
     
-    const [isInputFocused, setIsInputFocused] = useState(false);
+    const [isInputFocused, setIsInputFocused] = useState(false)
 
     useEffect(() => {
       const handleKeyDown = (e) => {
-        const key = e.key.toLowerCase();
-        const map = keyMap[key]; // your keyMap object
+        const key = e.key.toLowerCase()//making it works if it was uppercase 
+        const map = keyMap[key] // keyMap objec
   
-        console.log("input focused:", isInputFocused); // <-- NOW it logs correctly
+        if (!map || isInputFocused) return;//check if the key is vaild and you are not using the input 
   
-        if (!map || isInputFocused) return;
+        playkey(map.file, map.toneId)
   
-        playkey(map.file, map.toneId);
+        const button = document.getElementById(map.buttonId)
+        if (!button) return
   
-        const button = document.getElementById(map.buttonId);
-        if (!button) return;
-  
-        button.classList.add("active");
-        animating(map.toneId);
+        button.classList.add("active")
+        animating(map.toneId)
         setTimeout(() => {
-          button.classList.remove("active");
+          button.classList.remove("active")
         }, 140);
       };
   
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown)
+      return () => window.removeEventListener("keydown", handleKeyDown)
     }, [isInputFocused]);
     
     return(
