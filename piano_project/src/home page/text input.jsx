@@ -7,7 +7,7 @@ function InputSection ({ isTextFocused: setIsTextFocused }) {
     const handleSubmit = async () => {
 
         try {
-            const res = await fetch("/api/your-backend-endpoint", {
+            const res = await fetch("http://localhost:5000/api/your-backend-endpoint",  {
                 method: "POST",
                 body: JSON.stringify({ songName: inputValue }),
                 headers: { "Content-Type": "application/json" },
