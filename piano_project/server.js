@@ -11,13 +11,18 @@ const port = 5000;
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-});
+})
 
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+}))
+app.options("/api/ai-server", cors());
 app.use(bodyParser.json());
 
-app.post("/api/your-backend-endpoint", async (req, res) => {
+app.post("/api/ai-server", async (req, res) => {
   const { songName } = req.body;
 
   if (!songName) {
