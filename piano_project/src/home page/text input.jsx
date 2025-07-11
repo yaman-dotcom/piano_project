@@ -49,7 +49,7 @@ function InputSection ({ isTextFocused: setIsTextFocused }) {
                     </button>
 
                 </div>
-                <p>this feture does not work yet </p>
+                <p className='hi-alert' style={{ opacity: inputValue ? 1 : 0 }}>This feture does not work yet ): </p>
                 
             </div>
         </>

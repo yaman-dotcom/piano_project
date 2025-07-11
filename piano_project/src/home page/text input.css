@@ -42,3 +42,7 @@
     align-items: center;
     gap: 12px;
 }
+.hi-alert{
+    color: #E9E9E9;
+    font-family: 'jannat';
+}
