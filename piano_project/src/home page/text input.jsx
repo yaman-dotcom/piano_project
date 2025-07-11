@@ -49,7 +49,7 @@ function InputSection ({ isTextFocused: setIsTextFocused }) {
                     </button>
 
                 </div>
-
+                <p>this feture does not work yet </p>
                 
             </div>
         </>
