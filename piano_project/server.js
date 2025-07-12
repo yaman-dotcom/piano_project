@@ -28,7 +28,6 @@ app.post("/api/ai-server", async (req, res) => {
   if (!songName) {
     return res.status(400).json({ error: "Missing songName in request body" });
   }
-
   try {
     const messages = [
       {
