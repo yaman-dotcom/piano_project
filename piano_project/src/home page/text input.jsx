@@ -3,6 +3,11 @@ import './text input.css'
 
 function InputSection ({ isTextFocused: setIsTextFocused }) {
     const [inputValue,setInputValue]=useState('')
+    let sagguetions={
+        hbd:{name:'happy birth day'},
+        twinkle:{name:'twinkle twinkle little star'},
+        ode:{name:'ode to joy'},
+    }
 
     const handleSubmit = async () => {
 
@@ -48,6 +53,16 @@ function InputSection ({ isTextFocused: setIsTextFocused }) {
                             </svg>
                     </button>
 
+                </div>
+                <div className="hi-multi-choices-container">
+                    {Object.keys(sagguetions).map((key)=>(
+                        <button
+                        key={key}
+                        className='multi-choices-button'
+                        >
+                            <p>{sagguetions[key].name}</p>
+                        </button>
+                    ))}
                 </div>
                 <p className='hi-alert' style={{ opacity: inputValue ? 1 : 0 }}>This feture does not work yet :( </p>
                 

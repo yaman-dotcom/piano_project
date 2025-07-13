@@ -46,3 +46,17 @@
     color: #E9E9E9;
     font-family: 'jannat';
 }
+
+.multi-choices-button{
+    padding: 11px 9px;
+    background-color: #849BB240;
+    color: #E9E9E9;
+    border-color: #E9E9E9;
+    border: solid;
+    border-radius: 8px;
+}
+.hi-multi-choices-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
