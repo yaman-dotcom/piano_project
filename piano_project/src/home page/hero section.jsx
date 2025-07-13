@@ -74,8 +74,20 @@ function HeroSection (){
       window.addEventListener("keydown", handleKeyDown)
       return () => window.removeEventListener("keydown", handleKeyDown)
     }, [isInputFocused]);
-    
-    return(
+
+    let [musicValue,setMusicValue]=useState()
+    let downloadedMusic
+    // console.log(musicValue)
+    useEffect(() => {
+    for (let key in downloadedMusic) {
+        console.log(downloadedMusic[key].name)
+        if (downloadedMusic[key].name === musicValue) {
+        console.log(true);
+        break; // Optional: stops once a match is found
+        }
+    }
+    }, [musicValue]);
+        return(
         <>
             <div className="hero-section">
                 <div className='hs-piano-container'>
@@ -240,7 +252,9 @@ function HeroSection (){
                     <p className='hs-letter'>L</p>
                 </div>
             </div>
-            <InputSection isTextFocused={setIsInputFocused}/>
+            <InputSection isTextFocused={setIsInputFocused} musicValue={setMusicValue}
+                musicalSaggutions={downloadedMusic}
+            />
         </>
     )
 }
