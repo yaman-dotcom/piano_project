@@ -76,11 +76,13 @@ function HeroSection (){
     }, [isInputFocused]);
 
     let [musicValue,setMusicValue]=useState()
-    let downloadedMusic
+    let [downloadedMusic, setDownloadedMusic]=useState()
     // console.log(musicValue)
     useEffect(() => {
+       
     for (let key in downloadedMusic) {
         console.log(downloadedMusic[key].name)
+        
         if (downloadedMusic[key].name === musicValue) {
         console.log(true);
         break; // Optional: stops once a match is found
@@ -253,7 +255,7 @@ function HeroSection (){
                 </div>
             </div>
             <InputSection isTextFocused={setIsInputFocused} musicValue={setMusicValue}
-                musicalSaggutions={downloadedMusic}
+                musicalSaggutions={setDownloadedMusic}
             />
         </>
     )

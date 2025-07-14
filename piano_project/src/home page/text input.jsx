@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
 import './text input.css'
 
-function InputSection ({ isTextFocused: setIsTextFocused , musicValue:setMusicValue ,musicalSaggutions:ms}) {
+function InputSection ({ isTextFocused: setIsTextFocused , musicValue:setMusicValue ,musicalSaggutions:setDownloadedMusic}) {
     const [inputValue,setInputValue]=useState('')
     let sagguetions={
         hbd:{name:'happy birth day',song:['a','a','g','g','h','h','g','f','f','e','e','d','d','a'] },
         twinkle:{name:'twinkle twinkle little star' ,song:["a","a","h","a","k","j","a","a","h","a","l","k","a","a","k","h","k","j","h","g","g","h","k","l","k"] },
         ode:{name:'ode to joy' ,song:["d","d","f","g","g","f","d","s","a","a","s","d","d","s","s"] },
     }
-    ms=sagguetions
+    useEffect(()=>{
+        setDownloadedMusic(sagguetions)
+    },[])
     const handleSubmit = async () => {
 
         try {
