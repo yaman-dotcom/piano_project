@@ -83,6 +83,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.underlined-letter{
+    text-decoration: underline;
+}
 
 /* tones image */
 .hs-tone-container{

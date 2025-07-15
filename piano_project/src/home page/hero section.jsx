@@ -45,11 +45,6 @@ function HeroSection (){
             svg.removeEventListener("animationend", handler)
         })
     }
-   
-    
-    
-    
-    
     const [isInputFocused, setIsInputFocused] = useState(false)
 
     useEffect(() => {
@@ -75,6 +70,8 @@ function HeroSection (){
       return () => window.removeEventListener("keydown", handleKeyDown)
     }, [isInputFocused]);
 
+
+
     let [musicValue,setMusicValue]=useState()
     let [downloadedMusic, setDownloadedMusic]=useState()
     // console.log(musicValue)
@@ -89,7 +86,35 @@ function HeroSection (){
         }
     }
     }, [musicValue]);
-        return(
+
+    let sagguetions=[
+        {name:'happy birth day',song:['a','a','g','g','h','h','g','f','f','e','e','d','d','a'] },
+        {name:'twinkle twinkle little star' ,song:["a","a","h","a","k","j","a","a","h","a","l","k","a","a","k","h","k","j","h","g","g","h","k","l","k"] },
+        {name:'ode to joy' ,song:["d","d","f","g","g","f","d","s","a","a","s","d","d","s","s"] },
+    ]
+    const [currentMusicLetters, setCurentMusicLetters] = useState();
+
+    useEffect(() => {
+      for (let value of Object.values(sagguetions)) {
+        if (value.name === musicValue) {
+          setCurentMusicLetters(value.song);
+        }
+      }
+    }, [musicValue]);
+    
+    useEffect(() => {
+      if (!currentMusicLetters) return;
+    
+      for (let i of currentMusicLetters) {
+        const button = document.getElementById('button-' + i.toUpperCase());
+        if (button) {
+          button.classList.add('underlined-letter');
+        }
+      }
+    }, [currentMusicLetters]);
+    console.table(sagguetions)
+    // console.log(musicValue)
+    return(
         <>
             <div className="hero-section">
                 <div className='hs-piano-container'>
@@ -256,6 +281,8 @@ function HeroSection (){
             </div>
             <InputSection isTextFocused={setIsInputFocused} musicValue={setMusicValue}
                 musicalSaggutions={setDownloadedMusic}
+
+                saggutions={sagguetions}
             />
         </>
     )
