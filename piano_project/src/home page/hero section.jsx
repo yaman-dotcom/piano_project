@@ -102,18 +102,61 @@ function HeroSection (){
       }
     }, [musicValue]);
     
-    useEffect(() => {
-      if (!currentMusicLetters) return;
+    // useEffect(() => {
+    //   if (!currentMusicLetters) return;
     
-      for (let i of currentMusicLetters) {
-        const button = document.getElementById('button-' + i.toUpperCase());
+    //   for (let i of currentMusicLetters) {
+    //     // const button = document.getElementById('button-' + i.toUpperCase());
+    //     // console.log(button)
+    //     // if (button) {
+    //     //   button.classList.add('wanted-button');
+    //     // }
+    //     let isCorrectKey=false
+    //     document.addEventListener('keydown',function(e){
+    //         let currentKey=e.key
+    //         if(currentKey==i){
+    //             isCorrectKey=true
+    //         }
+    //     })
+    //   }
+    // }, [currentMusicLetters]);
+    
+
+    const [noteNumber, setNoteNumber] = useState(0);
+    const [nextKey, setNextKey] = useState(null);
+    
+    // Update nextKey when noteNumber or currentMusicLetters changes
+    useEffect(() => {
+      if (currentMusicLetters && currentMusicLetters[noteNumber]) {
+        setNextKey(currentMusicLetters[noteNumber]);
+      }
+    }, [noteNumber, currentMusicLetters]);
+    
+    // Add highlight to the next key only
+    useEffect(() => {
+      // First, remove all previous highlights
+      const allButtons = document.querySelectorAll('.piano-button');
+      allButtons.forEach(btn => btn.classList.remove('wanted-button'));
+    
+      if (nextKey) {
+        const button = document.getElementById('button-' + nextKey.toUpperCase());
         if (button) {
-          button.classList.add('underlined-letter');
+          button.classList.add('wanted-button');
         }
       }
-    }, [currentMusicLetters]);
-    console.table(sagguetions)
-    // console.log(musicValue)
+    }, [nextKey]);
+    
+    // Handle key press
+    useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === nextKey) {
+          setNoteNumber((prev) => prev + 1);
+        }
+      };
+    
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [nextKey]);
     return(
         <>
             <div className="hero-section">
@@ -268,15 +311,15 @@ function HeroSection (){
                     </div>
                 </div>
                 <div className="hs-letters-container">
-                    <p className='hs-letter'>A</p>
-                    <p className='hs-letter'>S</p>
-                    <p className='hs-letter'>D</p>
-                    <p className='hs-letter'>F</p>
-                    <p className='hs-letter'>G</p>
-                    <p className='hs-letter'>H</p>
-                    <p className='hs-letter'>J</p>
-                    <p className='hs-letter'>K</p>
-                    <p className='hs-letter'>L</p>
+                    <p id='hs-letter-A' className='hs-letter'>A</p>
+                    <p id='hs-letter-S' className='hs-letter'>S</p>
+                    <p id='hs-letter-D' className='hs-letter'>D</p>
+                    <p id='hs-letter-F' className='hs-letter'>F</p>
+                    <p id='hs-letter-G' className='hs-letter'>G</p>
+                    <p id='hs-letter-H' className='hs-letter'>H</p>
+                    <p id='hs-letter-J' className='hs-letter'>J</p>
+                    <p id='hs-letter-K' className='hs-letter'>K</p>
+                    <p id='hs-letter-L' className='hs-letter'>L</p>
                 </div>
             </div>
             <InputSection isTextFocused={setIsInputFocused} musicValue={setMusicValue}

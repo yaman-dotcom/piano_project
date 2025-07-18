@@ -4,7 +4,6 @@ import './text input.css'
 function InputSection({
     isTextFocused: setIsTextFocused,
     musicValue: setMusicValue,
-    musicalSaggutions: setDownloadedMusic,
     saggutions
   }) {
     const [inputValue, setInputValue] = useState('')
@@ -26,17 +25,14 @@ function InputSection({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
-  
           <button className="hi-submit" onClick={submit}>
             {/* Your SVG here */}
             Submit
           </button>
         </div>
-  
         <p className="hi-alert" style={{ display: inputValue ? 'flex' : 'none' }}>
           This feature does not work yet :(
         </p>
-  
         <div className="hi-multi-choices-container">
           {saggutions.map((item, index) => (
             <button
