@@ -32,10 +32,10 @@
     will-change: transform, background;
     box-shadow: 16px 24px 8px rgba(0 ,0 ,0 ,0.25) ;
   }
-  .wanted-button{
-      background-color: #45B69C;
-      backface-visibility: visible;
-    }
+.wanted-button{
+    background-color: #45B69C !important;
+    backface-visibility: visible;
+  }
   .active {
     background: linear-gradient(0deg, #8FA9C2, #E9E9E9);
     transform: rotateY(30deg);
@@ -51,9 +51,6 @@
     z-index: 3;
 }
 .blk-letter{
-    /* background: linear-gradient(0deg,white,rgba(255, 255, 255, 0.412));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     color: rgba(255, 255, 255, 0.492);
     height: fit-content ;
     line-height: 1;

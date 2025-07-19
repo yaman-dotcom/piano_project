@@ -101,25 +101,7 @@ function HeroSection (){
         }
       }
     }, [musicValue]);
-    
-    // useEffect(() => {
-    //   if (!currentMusicLetters) return;
-    
-    //   for (let i of currentMusicLetters) {
-    //     // const button = document.getElementById('button-' + i.toUpperCase());
-    //     // console.log(button)
-    //     // if (button) {
-    //     //   button.classList.add('wanted-button');
-    //     // }
-    //     let isCorrectKey=false
-    //     document.addEventListener('keydown',function(e){
-    //         let currentKey=e.key
-    //         if(currentKey==i){
-    //             isCorrectKey=true
-    //         }
-    //     })
-    //   }
-    // }, [currentMusicLetters]);
+
     
 
     const [noteNumber, setNoteNumber] = useState(0);
@@ -130,6 +112,7 @@ function HeroSection (){
       if (currentMusicLetters && currentMusicLetters[noteNumber]) {
         setNextKey(currentMusicLetters[noteNumber]);
       }
+
     }, [noteNumber, currentMusicLetters]);
     
     // Add highlight to the next key only
@@ -150,6 +133,7 @@ function HeroSection (){
     useEffect(() => {
       const handleKeyDown = (event) => {
         if (event.key === nextKey) {
+            console.log('Pressed:', event.key, 'Expected:', nextKey);
           setNoteNumber((prev) => prev + 1);
         }
       };
