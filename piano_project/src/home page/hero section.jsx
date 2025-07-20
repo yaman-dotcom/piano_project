@@ -132,7 +132,10 @@ function HeroSection (){
       if (currentMusicLetters && currentMusicLetters[noteNumber]) {
         setNextKey(currentMusicLetters[noteNumber]);
       }
-      
+    //   console.log(nextKey,noteNumber)
+      if (noteNumber >= currentMusicLetters.length) {//reset all the music letters to letter zero
+        setNoteNumber(0);
+      }
     }, [noteNumber, currentMusicLetters]);
     
     // Add highlight to the next key only
