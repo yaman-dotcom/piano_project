@@ -91,8 +91,8 @@ function HeroSection (){
         {name:'happy birth day',song:['a','a','g','g','h','h','g','f','f','e','e','d','d','a'] },
         {name:'twinkle twinkle little star' ,song:["a","a","h","a","k","j","a","a","h","a","l","k","a","a","k","h","k","j","h","g","g","h","k","l","k"] },
         {name:'ode to joy' ,
-            // song:["d","d","f","g","g","f","d","s","a","a","s","d","d","s","s"]
-            song:["w","e","r","t","g","f","d","s","a","a","s","d","d","s","s"] },
+            song:["d","d","f","g","g","f","d","s","a","a","s","d","d","s","s"]
+            },
     ]
     const [currentMusicLetters, setCurentMusicLetters] = useState();
 
