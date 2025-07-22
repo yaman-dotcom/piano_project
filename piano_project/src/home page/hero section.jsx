@@ -18,12 +18,12 @@ function HeroSection (){
         k: { file: "j.wav", buttonId: "button-K", toneId: "tone-K" },
         l: { file: "k.wav", buttonId: "button-L", toneId: "tone-L" },
 
-        w: { file: "a.wav", buttonId: 'button-W' },//black keys
-        e: { file: "d.wav", buttonId: 'button-E' },
-        r: { file: "f.wav", buttonId: 'button-R' },
-        t: { file: "g.wav", buttonId: 'button-T' },
-        y: { file: "l.wav", buttonId: 'button-Y' },
-        u: { file: "k.wav", buttonId: 'button-U' },
+        w: { file: "w.wav", buttonId: 'button-W' },//black keys
+        e: { file: "e.wav", buttonId: 'button-E' },
+        r: { file: "t.wav", buttonId: 'button-R' },
+        t: { file: "y.wav", buttonId: 'button-T' },
+        y: { file: "u.wav", buttonId: 'button-Y' },
+        u: { file: "o.wav", buttonId: 'button-U' },
 
     } //keys oject that contain file name ,button id (for the sound) and toneId (for the animation)
     
