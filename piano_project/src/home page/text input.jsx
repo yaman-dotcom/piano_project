@@ -7,8 +7,16 @@ function InputSection({
     saggutions
   }) {
     const [inputValue, setInputValue] = useState('')
+    let [isInputValid,setIsInputValid]=useState(false)
     function submit() {
       setMusicValue(inputValue)
+      for(let i of saggutions){
+        if(i.name==inputValue){
+          setIsInputValid(false)
+          break
+        }
+        setIsInputValid(true)
+      }
     }
     // console.log(saggutions)
     return (
@@ -33,7 +41,7 @@ function InputSection({
 
           </button>
         </div>
-        <p className="hi-alert" style={{ display: inputValue ? 'flex' : 'none' }}>
+        <p className="hi-alert" style={{ display: isInputValid ? 'flex' : 'none' }}>
           This feature does not work yet :(
         </p>
         <div className="hi-multi-choices-container">
