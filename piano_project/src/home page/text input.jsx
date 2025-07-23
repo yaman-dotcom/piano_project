@@ -56,6 +56,6 @@ function InputSection({
           ))}
         </div>
       </div>
-    );
+    )
   }
 export default InputSection
