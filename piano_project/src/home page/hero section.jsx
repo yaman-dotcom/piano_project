@@ -23,7 +23,7 @@ function HeroSection (){
         r: { file: "t.wav", buttonId: 'button-R' },
         t: { file: "y.wav", buttonId: 'button-T' },
         y: { file: "u.wav", buttonId: 'button-Y' },
-        u: { file: "o.wav", buttonId: 'button-U' },
+        u: { file: ".wav", buttonId: 'button-U' },
 
     } //keys oject that contain file name ,button id (for the sound) and toneId (for the animation)
     
